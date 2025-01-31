@@ -42,79 +42,79 @@ const Crud: FC = () => {
   }
 
   return (
-    <div className="container mx-auto w-[600px] bg-slate-900 text-white p-5 mt-5 rounded-lg text-center">
-      <h2 className="text-3xl mb-4 font-bold font-serif">CRUD</h2>
-      <form className="flex flex-col gap-4 items-center">
+    <div className="container mx-auto w-[700px] bg-gradient-to-r from-teal-500 to-teal-800 text-white p-8 mt-5 rounded-lg shadow-2xl">
+      <h2 className="text-3xl mb-6 font-bold font-serif text-center">CRUD Application</h2>
+      <form className="flex flex-col gap-6 items-center">
         <input
-          className="border rounded-md font-mono p-2 w-full"
-          placeholder="Enter name..."
+          className="border-2 border-teal-600 rounded-lg p-4 w-full bg-teal-700 text-white placeholder-teal-300 focus:outline-none focus:ring-2 focus:ring-teal-500 transition duration-300"
+          placeholder="Enter first name..."
           value={user.firstName}
           onChange={(e) => setUser({ ...user, firstName: e.target.value })}
         />
         <input
-          className="border rounded-md font-mono p-2 w-full"
-          placeholder="Enter surname..."
+          className="border-2 border-teal-600 rounded-lg p-4 w-full bg-teal-700 text-white placeholder-teal-300 focus:outline-none focus:ring-2 focus:ring-teal-500 transition duration-300"
+          placeholder="Enter last name..."
           value={user.lastName}
           onChange={(e) => setUser({ ...user, lastName: e.target.value })}
         />
         <input
-          className="border rounded-md font-mono p-2 w-full"
+          className="border-2 border-teal-600 rounded-lg p-4 w-full bg-teal-700 text-white placeholder-teal-300 focus:outline-none focus:ring-2 focus:ring-teal-500 transition duration-300"
           placeholder="Enter email..."
           value={user.email}
           onChange={(e) => setUser({ ...user, email: e.target.value })}
         />
         <input
-          className="border rounded-md font-mono p-2 w-full"
+          className="border-2 border-teal-600 rounded-lg p-4 w-full bg-teal-700 text-white placeholder-teal-300 focus:outline-none focus:ring-2 focus:ring-teal-500 transition duration-300"
           type="number"
+          placeholder="Enter age..."
           value={user.age}
           onChange={(e) => setUser({ ...user, age: Number(e.target.value) })}
         />
         <button
           onClick={handleAdd}
-          className="bg-green-500 cursor-pointer w-full text-white py-2 rounded-md"
+          className="bg-teal-600 hover:bg-teal-700 text-white w-full py-3 rounded-lg transition duration-300"
         >
-          User Added
+          Add User
         </button>
       </form>
 
-      <ul>
+      <ul className="mt-8">
         {users.map((user, index) => (
           <li
             key={index}
-            className="flex justify-between items-center p-2 border-b"
+            className="flex justify-between items-center p-4 border-b border-teal-500"
           >
             <div className="w-[30%]">
               <div className="flex gap-1">
-                <span>Full Name:</span>
-                <h2>{user.firstName} </h2>
-                <h2> {user.lastName}</h2>
+                <span className="font-semibold">Full Name:</span>
+                <h2>{user.firstName} {user.lastName}</h2>
               </div>
               <div className="flex gap-1">
-                <h3>Email:</h3>
+                <h3 className="font-semibold">Email:</h3>
                 <span>{user.email}</span>
               </div>
               <div className="flex gap-1">
-                <h4>Age:</h4>
-                <span>{user.age} yosh</span>
+                <h4 className="font-semibold">Age:</h4>
+                <span>{user.age} years</span>
               </div>
             </div>
 
-            <div className="flex gap-1 flex-col">
+            <div className="flex gap-5 flex-col">
               <button
                 onClick={() => setUser(user)}
-                className="text-yellow-500 cursor-pointer"
+                className="text-yellow-400 hover:text-yellow-500 transition duration-300"
               >
                 Edit
               </button>
               <button
-                className="text-green-500 cursor-pointer"
                 onClick={() => handleUpdate(user.id)}
+                className="text-blue-400 hover:text-blue-500 transition duration-300"
               >
                 Update
               </button>
               <button
                 onClick={() => handleDelete(user.id)}
-                className="text-red-500 cursor-pointer"
+                className="text-red-400 hover:text-red-500 transition duration-300"
               >
                 Delete
               </button>
