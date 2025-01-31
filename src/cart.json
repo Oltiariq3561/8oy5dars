@@ -1,29 +1,46 @@
 {
   "fruits": [
     {
-      "id": 1,
-      "name": "Apple",
-      "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/15/Red_Apple.jpg/265px-Red_Apple.jpg",
-      "price": 35
+      "id": 5,
+      "name": "Orange",
+      "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/77/Orange.jpg/280px-Orange.jpg",
+      "price": 25,
+      "weight": 0.3
     },
     {
-      "id": 2,
-      "name": "Banana",
-      "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/44/Bananas_white_background_DS.jpg/320px-Bananas_white_background_DS.jpg",
-      "price": 12
+      "id": 6,
+      "name": "Mango",
+      "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/4e/Mangoes.jpg/320px-Mangoes.jpg",
+      "price": 50,
+      "weight": 0.5
     },
     {
-      "id": 3,
-      "name": "Grapes",
-      "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/bb/Table_grapes_on_white.jpg/320px-Table_grapes_on_white.jpg",
-      "weight": 0.1,
-      "price": 45
+      "id": 7,
+      "name": "Peach",
+      "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/1d/Peach.jpg/320px-Peach.jpg",
+      "price": 40,
+      "weight": 0.25
     },
     {
-      "id": 4,
-      "name": "Pineapple",
-      "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/cb/Pineapple_and_cross_section.jpg/286px-Pineapple_and_cross_section.jpg",
-      "price": 200
+      "id": 8,
+      "name": "Strawberry",
+      "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e3/Strawberry.jpg/320px-Strawberry.jpg",
+      "price": 60,
+      "weight": 0.05
+    },
+    {
+      "id": 9,
+      "name": "Watermelon",
+      "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/6/6e/Watermelon.jpg/320px-Watermelon.jpg",
+      "price": 150,
+      "weight": 5
+    },
+    {
+      "id": 10,
+      "name": "Kiwi",
+      "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/0f/Kiwifruit.jpg/320px-Kiwifruit.jpg",
+      "price": 80,
+      "weight": 0.2
     }
   ]
 }

@@ -41,33 +41,33 @@ const OnlineStore: FC = () => {
   }
 
   return (
-    <div className="container mx-auto p-4">
-      <h1 className="text-4xl font-bold text-center text-blue-600 mb-8">
+    <div className="bg-gradient-to-r from-green-400 to-blue-500 min-h-screen flex flex-col items-center p-6">
+      <h1 className="text-4xl font-bold text-white text-center mb-8 tracking-wider drop-shadow-md">
         Online Store
       </h1>
-      <h3 className="fixed top-20 left-10 text-xl font-mono font-bold backdrop-blur-sm p-2">
+      <h3 className="fixed top-20 left-10 text-xl font-mono font-bold text-white backdrop-blur-sm p-3 rounded-lg shadow-lg">
         Total: {totalUZS()} UZS
       </h3>
 
-      <div className="flex flex-wrap justify-center gap-6 mb-6">
+      <div className="flex flex-wrap justify-center gap-8 mb-12">
         {products.map((product) => (
           <div
             key={product.id}
-            className="rounded-lg shadow-lg hover:shadow-xl transition-all duration-300 w-64 flex flex-col p-2 items-center"
+            className="rounded-2xl shadow-xl hover:shadow-2xl transition-all duration-300 w-72 flex flex-col items-center bg-white p-4"
           >
             <img
               src={product.image}
               alt={product.name}
-              className="w-full h-48 object-cover rounded-t-lg"
+              className="w-full h-48 object-cover rounded-2xl mb-4"
             />
-            <div className="p-4 flex flex-col items-center">
-              <h3 className="text-xl font-semibold text-gray-800">
+            <div className="flex flex-col items-center">
+              <h3 className="text-2xl font-semibold text-gray-800 mb-2">
                 {product.name}
               </h3>
-              <p className="text-lg text-gray-600">{product.price} UZS</p>
+              <p className="text-xl text-gray-600 mb-4">{product.price} UZS</p>
               <button
                 onClick={() => handleAddToCart(product.id)}
-                className="cursor-pointer mt-4 w-full bg-blue-500 text-white py-2 px-4 rounded-lg hover:bg-blue-600 transition-colors duration-300"
+                className="w-full bg-blue-600 text-white py-3 px-5 rounded-xl hover:bg-blue-700 transition duration-300 transform hover:scale-105"
               >
                 Add to Cart
               </button>
@@ -76,24 +76,24 @@ const OnlineStore: FC = () => {
         ))}
       </div>
 
-      <h2 className="text-2xl font-semibold text-center text-gray-700 mb-4">
+      <h2 className="text-2xl font-semibold text-center text-gray-800 mb-8">
         Products in Cart:
       </h2>
 
-      <ul className="flex gap-4 flex-col">
+      <ul className="flex flex-col gap-6 w-full max-w-3xl mx-auto">
         {cart.map((item: any) => {
           const product = products.find((p) => p.id == item.productId);
 
           return (
             <li
               key={item.productId}
-              className="flex items-center justify-between bg-gray-100 p-4 rounded-lg shadow-md"
+              className="flex items-center justify-between bg-white p-6 rounded-xl shadow-md hover:shadow-lg transition duration-300"
             >
-              <div className="flex items-center gap-4">
+              <div className="flex items-center gap-6">
                 <img
                   src={product?.image}
                   alt={product?.name}
-                  className="w-12 h-12 object-cover rounded-full"
+                  className="w-16 h-16 object-cover rounded-full"
                 />
                 <span className="text-lg font-medium text-gray-800">
                   {product?.name} - Quantity: {item.quantity}
@@ -103,22 +103,22 @@ const OnlineStore: FC = () => {
                 </span>
               </div>
 
-              <div className="flex gap-3 text-white">
+              <div className="flex gap-4">
                 <button
                   onClick={() => handleIncrease(item.productId)}
-                  className="bg-blue-500 py-1 px-3 rounded-lg cursor-pointer"
+                  className="bg-blue-600 py-2 px-5 rounded-lg cursor-pointer text-white hover:bg-blue-700 transition-colors duration-300"
                 >
                   Increase
                 </button>
                 <button
                   onClick={() => handleDecrease(item.productId)}
-                  className="bg-yellow-500 py-1 px-3 rounded-lg cursor-pointer"
+                  className="bg-yellow-600 py-2 px-5 rounded-lg cursor-pointer text-white hover:bg-yellow-700 transition-colors duration-300"
                 >
                   Decrease
                 </button>
                 <button
                   onClick={() => handleRemoveCart(item.productId)}
-                  className="bg-red-500 py-1 px-3 rounded-lg cursor-pointer"
+                  className="bg-red-600 py-2 px-5 rounded-lg cursor-pointer text-white hover:bg-red-700 transition-colors duration-300"
                 >
                   Remove
                 </button>
